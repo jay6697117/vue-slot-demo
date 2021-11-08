@@ -1,17 +1,32 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <CustomList :list="books">
+      <template v-slot:title>
+        <img src="../assets/list.png" alt="" />
+        <span>{{ title }}</span>
+      </template>
+      <template v-slot:content>
+        <div v-for="(item, index) in books" :key="index">{{ item }}</div>
+      </template>
+    </CustomList>
   </div>
 </template>
 
 <script>
-import HelloWorld from "@/components/HelloWorld.vue";
+import CustomList from '@/components/CustomList.vue';
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    HelloWorld,
+    CustomList
   },
+  data() {
+    return {
+      title: '书籍列表',
+      books: ['Dom编程艺术', '你不知道的Javascript', 'CSS世界', 'HTML入门教程']
+    };
+  }
 };
 </script>
+
+<style lang="scss" scoped></style>
