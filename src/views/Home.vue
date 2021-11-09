@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <CustomList :list="books">
-      <template v-slot:title>
-        <img src="../assets/list.png" alt="" />
-        <span>{{ title }}</span>
+    <CustomList :title="titleParent" :books="booksParent">
+      <template v-slot:title="{ titleSlot }">
+        <img :src="require('../assets/list.png')" alt="logo" />
+        <span>{{ titleSlot }}</span>
       </template>
-      <template v-slot:content>
-        <div v-for="(item, index) in books" :key="index">{{ item }}</div>
+      <template v-slot:item="{ itemSlot }">
+        <img :src="itemSlot.icon" alt="" />
+        <span>{{ itemSlot.name }}</span>
       </template>
     </CustomList>
   </div>
@@ -22,8 +23,13 @@ export default {
   },
   data() {
     return {
-      title: '书籍列表',
-      books: ['Dom编程艺术', '你不知道的Javascript', 'CSS世界', 'HTML入门教程']
+      titleParent: '书籍列表',
+      booksParent: [
+        { name: 'Dom编程艺术', icon: require('../assets/people.png') },
+        { name: '你不知道的Javascript', icon: require('../assets/love.png') },
+        { name: 'CSS世界', icon: require('../assets/clock.png') },
+        { name: 'HTML入门教程', icon: require('../assets/star.png') }
+      ]
     };
   }
 };

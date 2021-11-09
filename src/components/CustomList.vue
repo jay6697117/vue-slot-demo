@@ -1,11 +1,13 @@
 <template>
-  <div class="cl-wrap">
-    <div class="cl-title">
-      <slot name="title">书籍默认标题</slot>
+  <div class="wrap">
+    <div class="title">
+      <slot name="title" :titleSlot="titleCtd">书籍列表默认标题</slot>
     </div>
     <hr />
-    <div class="cl-content">
-      <slot name="content">书籍列表为空</slot>
+    <div class="content">
+      <div class="content-item" v-for="(item, index) in books" :key="Date.now() + '-' + index">
+        <slot name="item" :itemSlot="item"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -14,30 +16,66 @@
 export default {
   name: 'HelloWorld',
   props: {
-    list: {
+    //标题
+    title: {
+      type: String,
+      default: ''
+    },
+    //书籍列表
+    books: {
       type: Array,
       default() {
         return [];
       }
     }
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    titleCtd() {
+      return `【 ${this.title} 】`;
+    }
   }
 };
 </script>
+
 <style lang="scss" scoped>
-.cl-wrap {
-  .cl-title {
+.wrap {
+  padding: 30px 60px 30px 80px;
+  background-color: #eee;
+
+  .title {
+    padding-bottom: 10px;
+    color: blue;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    > span {
+      padding-left: 5px;
+    }
   }
-  .cl-content {
+  .content {
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    > div {
-      color: red;
+    justify-content: flex-start;
+    align-items: flex-start;
+    > .content-item {
+      padding-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      > span {
+        padding-left: 5px;
+      }
+    }
+
+    .content-item:last-child {
+      padding-bottom: 0;
     }
   }
 }
