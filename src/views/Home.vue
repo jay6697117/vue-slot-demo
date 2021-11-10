@@ -2,7 +2,7 @@
   <div class="home">
     <CustomList :title="titleParent" :books="booksParent">
       <template v-slot:title="{ titleSlot }">
-        <img :src="require('../assets/list.png')" alt="logo" />
+        <img :src="require('@/assets/list.png')" alt="logo" />
         <span>{{ titleSlot }}</span>
       </template>
       <template v-slot:item="{ itemSlot }">
@@ -25,10 +25,10 @@ export default {
     return {
       titleParent: '书籍列表',
       booksParent: [
-        { name: 'Dom编程艺术', icon: require('../assets/people.png') },
-        { name: '你不知道的Javascript', icon: require('../assets/love.png') },
-        { name: 'CSS世界', icon: require('../assets/clock.png') },
-        { name: 'HTML入门教程', icon: require('../assets/star.png') }
+        { name: 'Dom编程艺术', icon: require('@/assets/people.png') },
+        { name: '你不知道的Javascript', icon: require('@/assets/love.png') },
+        { name: 'CSS世界', icon: require('@/assets/clock.png') },
+        { name: 'HTML入门教程', icon: require('@/assets/star.png') }
       ]
     };
   }
