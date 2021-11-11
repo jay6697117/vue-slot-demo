@@ -6,7 +6,7 @@
     <hr />
     <div class="content">
       <div class="content-item" v-for="(item, index) in books" :key="Date.now() + '-' + index">
-        <slot name="item" :itemSlot="item"></slot>
+        <slot name="item" :iconSlot="item.icon" :nameSlot="`【${item.name}】`"></slot>
       </div>
     </div>
   </div>
@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     titleCtd() {
-      return `【 ${this.title} 】`;
+      return `【${this.title}】`;
     }
   }
 };
@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrap {
-  padding: 30px 60px 30px 80px;
+  padding: 30px 20px 30px 80px;
   background-color: #eee;
 
   .title {

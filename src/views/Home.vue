@@ -3,11 +3,11 @@
     <CustomList :title="titleParent" :books="booksParent">
       <template v-slot:title="{ titleSlot }">
         <img :src="require('@/assets/list.png')" alt="logo" />
-        <span>{{ titleSlot }} || p1</span>
+        <span>{{ titleSlot }} - p1</span>
       </template>
-      <template v-slot:item="{ itemSlot }">
-        <img :src="itemSlot.icon" alt="" />
-        <span>{{ itemSlot.name }} || p2</span>
+      <template v-slot:item="{ iconSlot, nameSlot }">
+        <img :src="iconSlot" alt="icon" />
+        <span>{{ nameSlot }} - p2</span>
       </template>
     </CustomList>
   </div>
