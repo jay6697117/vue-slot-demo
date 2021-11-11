@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrap {
-  padding: 30px 20px 30px 80px;
+  padding: 30px 20px 30px 60px;
   background-color: #eee;
 
   .title {
@@ -52,9 +52,6 @@ export default {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    > span {
-      padding-left: 5px;
-    }
   }
   .content {
     padding-top: 10px;
@@ -68,10 +65,6 @@ export default {
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-
-      > span {
-        padding-left: 5px;
-      }
     }
 
     .content-item:last-child {
