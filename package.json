@@ -2,10 +2,12 @@
   "name": "vue-slot-demo",
   "version": "0.1.0",
   "private": true,
+  "config" : { "port" : "8080" },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "node test.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
