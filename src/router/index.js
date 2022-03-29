@@ -19,8 +19,9 @@ const routes = [
 
 console.log('process.env :>> ', process.env);
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+  mode: 'hash',
+  // mode: 'history',
+  // base: process.env.BASE_URL,
   routes
 });
 export default router;

@@ -1,5 +1,16 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <Father />
   </div>
 </template>
+
+<script>
+import Father from '@/components/Father.vue';
+export default {
+  components: {
+    Father
+  }
+};
+</script>
+
+<style lang="scss" scoped></style>
