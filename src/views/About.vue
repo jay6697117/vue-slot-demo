@@ -1,14 +1,18 @@
 <template>
   <div class="about">
-    <Father />
+    <!-- <Father /> -->
+    <Demo />
   </div>
 </template>
 
 <script>
-import Father from '@/components/Father.vue';
+import Demo from '@/components/Demo'
+// import Father from '@/components/Father.vue';
+Demo
 export default {
   components: {
-    Father
+    Demo,
+    // Father
   }
 };
 </script>
