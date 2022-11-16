@@ -1,18 +1,29 @@
 <template>
   <div class="about">
     <!-- <Father /> -->
-    <Demo />
+    <!-- <Demo /> -->
+    <vue-city @changeCity="changeCity" />
   </div>
 </template>
 
 <script>
-import Demo from '@/components/Demo'
+// import Demo from '@/components/Demo';
 // import Father from '@/components/Father.vue';
-Demo
+import VueCity from '@/components/VueCity';
 export default {
   components: {
-    Demo,
+    // Demo,
     // Father
+    VueCity
+  },
+  data() {
+    return {
+    };
+  },
+  methods: {
+    changeCity(city) {
+      console.log('changeCity city:', city)
+    }
   }
 };
 </script>

@@ -8,8 +8,6 @@
 export default {
   data() {
     return {
-      boothRef: null,
-      mask: null,
       boxShow: false
     };
   },
